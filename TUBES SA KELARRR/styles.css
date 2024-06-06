@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('laptop.jpg');
+  background-size: cover;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#resultOutput {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  overflow-wrap: break-word;
+}
+
+.hidden {
+  display: none;
+}
+
+#networkDevicesOutput {
+  margin-top: 1rem;
+}
+
+#music {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#music h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#music audio {
+  display: none;
+}
+
+#toggleMusicBtn {
+  margin-top: 10px;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.member-info {
+  margin-right: 20px;
+}
+
+.member-info h3 {
+  margin-bottom: 5px;
+}
+
+.member-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.highlighted-row {
+  background-color: red;
+}
+
+

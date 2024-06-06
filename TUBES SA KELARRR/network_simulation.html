@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Simulation</title>
+    <link rel="stylesheet" href="styles2.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #444;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="radio"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #networkDevicesOutput ul,
+        #fileSizesOutput ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #networkDevicesOutput li,
+        #fileSizesOutput li {
+            background-color: #f9f9f9;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #resultOutput {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .highlighted {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="login">
+            <h2>Select Algorithm</h2>
+            <label>
+                <input type="radio" name="algorithm" value="bruteforce" id="bruteforce"> Bruteforce
+            </label>
+            <label>
+                <input type="radio" name="algorithm" value="divideAndConquer" id="divideAndConquer"> Divide and Conquer (Merge Sort)
+            </label>
+            <div class="centered">
+                <button onclick="login()">Submit</button>
+            </div>
+        </div>
+
+        <div id="configureNetwork" class="hidden">
+            <h2>Configure Network</h2>
+            <label for="deviceName">Device Name:</label>
+            <input type="text" id="deviceName">
+            <label for="bandwidth">Bandwidth (Mbps):</label>
+            <input type="number" id="bandwidth">
+            <div class="centered">
+                <button onclick="addNetworkDevice()">Add Device</button>
+            </div>
+            <div id="networkDevicesOutput"></div>
+            <div class="centered">
+                <button id="continueBtn" class="hidden" onclick="continueToSimulation()">Continue to Simulation</button>
+            </div>
+        </div>
+
+        <div id="simulation" class="hidden">
+            <h2>Simulation</h2>
+            <label for="fileSize">File Size (MB):</label>
+            <input type="number" id="fileSize">
+            <div class="centered">
+                <button onclick="addFileSize()">Add File Size</button>
+            </div>
+            <div id="fileSizesOutput"></div>
+            <div class="centered">
+                <button id="runBruteForceSimulationBtn" class="hidden" onclick="runSimulation()">Run Brute Force Simulation</button>
+                <button id="runMergeSortSimulationBtn" class="hidden" onclick="runSimulation()">Run Merge Sort Simulation</button>
+            </div>
+        </div>
+
+        <div id="results" class="hidden">
+            <h2>Results</h2>
+            <div id="resultOutput"></div>
+            <div class="centered">
+                <button onclick="document.location.reload()">Restart</button>
+            </div>
+        </div>
+
+        <div id="mergeSortVisualization">
+            <div id="mergeSortOutput"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

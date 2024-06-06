@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Simulation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Network Simulation</h1>
+  </header>
+  <main>
+    <section id="login">
+      <h2>Method of Algorithm</h2>
+      <form id="loginForm" onsubmit="login(); return false;">
+        <label>
+          <input type="radio" name="algorithm" value="bruteforce" checked>
+          Brute Force Exhaustive Search
+        </label>
+        <label>
+          <input type="radio" name="algorithm" value="divideAndConquer">
+          Divide and Conquer Merge Sort
+        </label>
+        <button type="submit">Start Simulation</button>
+      </form>
+    </section>
+    <section id="configureNetwork" class="hidden">
+      <h2>Configure Network</h2>
+      <form id="addDeviceForm" onsubmit="addNetworkDevice(); return false;">
+        <label for="deviceName">Device Name:</label>
+        <input type="text" id="deviceName" name="deviceName" required>
+        <label for="bandwidth">Bandwidth (in Mbps):</label>
+        <input type="number" id="bandwidth" name="bandwidth" required>
+        <button type="submit">Add Network Device</button>
+      </form>
+      <button id="continueBtn" class="hidden">Continue</button>
+      <div id="networkDevicesOutput"></div>
+    </section>
+    <section id="simulation" class="hidden">
+      <h2>Simulation Settings</h2>
+      <form id="simulationForm" onsubmit="addFileSize(); return false;">
+        <label for="fileSize">File Size (in MB):</label>
+        <input type="number" id="fileSize" name="fileSize" required>
+        <button type="submit">Add File Size</button>
+      </form>
+      <button id="runSimulationBtn" class="hidden" onclick="runSimulation()">Run Simulation</button>
+      <div id="fileSizesOutput"></div>
+      
+    </section>
+    <section id="results" class="hidden">
+      <h2>Simulation Results</h2>
+      <div id="resultOutput"></div>
+      <canvas id="mergeSortCanvas" width="800" height="600"></canvas>
+    </section>
+    
+    <section id="team">
+      <h2>Our Team</h2>
+      <div class="team-member">
+        <div class="member-info">
+          <h3>Mawan</h3>
+          <p>Role: Network Engineer</p>
+          <p>Expertise: Network Optimization</p>
+        </div>
+        <div class="member-photo" style="background-image: url('mawan.jpg');"></div>
+      </div>
+      <div class="team-member">
+        <div class="member-info">
+          <h3>Simong</h3>
+          <p>Role: Software Developer</p>
+          <p>Expertise: Backend Development</p>
+        </div>
+        <div class="member-photo" style="background-image: url('simongLMS.jpg');"></div>
+      </div>
+      <div class="team-member">
+        <div class="member-info">
+          <h3>Nopal</h3>
+          <p>Role: Frontend Developer</p>
+          <p>Expertise: UI/UX Design</p>
+        </div>
+        <div class="member-photo" style="background-image: url('Nopal.JPG');"></div>
+      </div>
+    </section>
+  </main>
+  <script src="simpeninibos.js"></script>
+</body>
+</html>
